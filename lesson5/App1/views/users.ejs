@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <title><%= title %></title> -->
+  <!--   <link rel='stylesheet' href='/stylesheets/style.css' />  -->
+   <style>
+  table,th,td{
+  border: 1px solid blue;
+}
+   </style>
+  </head>
+  <body>
+    <!-- <h1><%= title%></h1> -->
+    <p>Welcome </p> 
+
+    <table>
+        <tr>
+          <th>Id</th><th>Name</th><th>UserName</th><th>Email</th><th>City</th><th>Zipcode</th><th>Latitude</th><th>Longitude</th><th>Website</th>
+        </tr>
+      
+        <% for (var i = 0; i < title.length; i++) { %>
+          <tr>
+            <td><%= title[i].id %></td>
+            <td><%= title[i].name %></td>
+            <td><%= title[i].username %></td>
+            <td><%= title[i].email %></td>
+            <td><%= title[i].address.city %></td>
+            <td><%= title[i].address.zipcode %></td>
+            <td><%= title[i].address.geo.lat %></td>
+            <td><%= title[i].address.geo.lng %></td>
+            <td><%= title[i].website %></td>
+
+          </tr>    
+        <% } %>
+      </table>
+
+  </body>
+</html>
