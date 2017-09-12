@@ -1,0 +1,20 @@
+document = ({student: 'Bob', books: [{author: 'daniel steel', tags: 'love',ISBN: '1234', return_date: '12/03/2017'},{author: 'John Grisham',tags: 'law',ISBN: '5623',return_date: '12/3/2017'}]});
+{
+        "student" : "Bob",
+        "books" : [
+                {
+                        "author" : "daniel steel",
+                        "tags" : "love",
+                        "ISBN" : "1234",
+                        "return_date" : "12/03/2017"
+                },
+                {
+                        "author" : "John Grisham",
+                        "tags" : "law",
+                        "ISBN" : "5623",
+                        "return_date" : "12/3/2017"
+                }
+        ]
+}
+> db.asignment.insert(document);
+WriteResult({ "nInserted" : 1 })
