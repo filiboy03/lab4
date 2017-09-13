@@ -1,0 +1,3 @@
+db.homework7.find({$books:{$search:'love'}});
+
+db.homework7.createIndex({return_date: 1,student:-1});

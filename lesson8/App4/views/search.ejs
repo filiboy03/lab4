@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title><%= title %></title>
+                <link rel='stylesheet' href='/stylesheets/style.css' />
+                <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+              
+        </head>
+<body>
+
+                                
+<h1><%= title %></h1>
+<form >
+   
+   Category:<br>
+  <input id ="category" type="text" name="categoryname" placeholder="Enter Category">
+  <br><br>
+  <input id ="searchbut" type="button" value="Search near Me">
+</form> 
+
+<p>Click the search button for services near your area.</p>
+
+</body>
+
+<script> 
+  $(document).ready(function getLocation() {
+   if (navigator.geolocation) {
+   navigator.geolocation.getCurrentPosition(showPosition);
+      }  
+    else { 
+   alert( "Geolocation is not supported by this browser.");
+          }
+  })
+
+  var long;
+  var lat;
+  function showPosition(position) {
+   lat =position.coords.latitude ;
+     long=  position.coords.longitude;
+     }  
+  
+     $('#searchbut').live('click', function () {
+    
+    var toSend = $('#category').val();
+    var data = {"long":long,"lat":lat,"category":toSend};
+   
+					
+       
+    
+    $.ajax({
+      type: "POST",
+      
+      data: JSON.stringify(data),
+      contentType: "application/json",
+      cache: false,
+      url: 'http://localhost:3300/search',
+      success: function(data) {
+                          // alert('success');
+                            console.log(JSON.stringify(data));
+                        },
+     error  : function() { alert('error');}
+    });
+   });
+ 
+        
+ </script>
+</html>

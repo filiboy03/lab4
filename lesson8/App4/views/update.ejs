@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Delete from <%= title %></p>
+
+    <form action="/update" method="post">
+ Find by name:<input type="text" name="finditem"><br>
+
+     Name:<input type="text" name="name"><br>
+ Category:<input type="text" name="category"><br>
+Longitude:<input type="text" name="longitude"><br>
+ Latitude:<input type="text" name="latitude"><br>
+
+ <input type="submit" name="update" value="Update"><br>
+
+  </body>
+</html>
